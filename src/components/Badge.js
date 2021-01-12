@@ -1,6 +1,6 @@
 import React from 'react'
 
-import "./Styles/Badge.css"
+import "./styles/Badge.css"
 import confLogo from '../images/badge-header.svg'
 
 class Badge extends React.Component {
