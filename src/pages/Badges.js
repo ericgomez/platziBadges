@@ -3,6 +3,8 @@ import React from 'react'
 import './styles/Badges.css'
 import confLogo from '../images/badge-header.svg'
 import BadgesList from '../components/BadgesList'
+import PageLoading from '../components/PageLoading'
+import PageError from '../components/PageError'
 import { Link } from 'react-router-dom'
 
 import api from '../api'
@@ -37,11 +39,11 @@ class Badges extends React.Component {
   /*En este momento de la fase de montado se van a tomar las propiedades, el estado y el contexto y se va a generar la UI inicial de este componente*/
   render() {
     if (this.state.loading === true) {
-      return 'Loading...'
+      return <PageLoading />
     }
 
     if (this.state.error) {
-      return `Error: ${this.state.error.message}`
+      return <PageError error={this.state.error} />
     }
 
     return (
