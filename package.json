@@ -15,6 +15,7 @@
     "bootstrap": "^4.5.3",
     "browserslist": "^4.16.1",
     "caniuse-lite": "^1.0.30001174",
+    "md5": "^2.3.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-router-dom": "^5.2.0",
