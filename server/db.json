@@ -440,6 +440,22 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "Eric",
+      "lastName": "Gomez",
+      "email": "eric.gmz93@gmail.com",
+      "jobTitle": "Sistemas",
+      "twitter": "ericgomezmx",
+      "id": "2JsTAIC"
+    },
+    {
+      "firstName": "Rick",
+      "lastName": "Sanchez",
+      "email": "ricksanchez@gmail.com",
+      "jobTitle": "Scientific",
+      "twitter": "ricksanchez",
+      "id": "iWOjdlX"
     }
   ]
 }
