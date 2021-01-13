@@ -8,6 +8,7 @@ import PageError from '../components/PageError'
 import { Link } from 'react-router-dom'
 
 import api from '../api'
+import MiniLoader from '../components/MiniLoader'
 
 class Badges extends React.Component {
 
@@ -21,6 +22,14 @@ class Badges extends React.Component {
   /*Este último método de la fase de montado se ejecuta una vez el componente se renderizó en el navegador y nos permite interactuar con el DOM o las otras APIs del navegador (geolocation, navigator, notificaciones, etc.).*/
   componentDidMount() {
     this.fetchData()
+
+    //Polling consiste en que cada cierto tiempo que es definido por nosotros se buscan los datos
+    this.intervalId = setInterval(this.fetchData, 5000)
+  }
+
+  //Cancelamos el proceso de intervalId cuando cambiamos de pagina
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
   }
 
   fetchData = async () => {
@@ -38,7 +47,7 @@ class Badges extends React.Component {
 
   /*En este momento de la fase de montado se van a tomar las propiedades, el estado y el contexto y se va a generar la UI inicial de este componente*/
   render() {
-    if (this.state.loading === true) {
+    if (this.state.loading === true && !this.state.data) {
       return <PageLoading />
     }
 
@@ -68,6 +77,7 @@ class Badges extends React.Component {
             
               <BadgesList badges={this.state.data} />
               
+              {this.state.loading && <MiniLoader />}
             </div>
           </div>
 
